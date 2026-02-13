@@ -8,9 +8,9 @@
 	<title>QOKE</title>
 </svelte:head>
 
-<div class="w-screen h-screen overflow-scroll text-center snap-mandatory snap-y">
+<div class="h-dvh overflow-scroll text-center snap-mandatory snap-y">
 	<header
-		class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-purple p-4 h-screen snap-start"
+		class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-purple p-4 h-dvh snap-start"
 	>
 		<h1 class="font-display text-yellow text-8xl md:text-9xl">QOKE</h1>
 		<p
@@ -21,7 +21,7 @@
 	</header>
 	<main>
 		<section
-			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-blue p-4 h-screen snap-start"
+			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-blue p-4 h-dvh snap-start"
 		>
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">
 				STRA<img
@@ -37,7 +37,7 @@
 			</p>
 		</section>
 		<section
-			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-cyan p-4 h-screen snap-start"
+			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-cyan p-4 h-dvh snap-start"
 		>
 			<h2 class="font-display text-pink text-5xl md:text-8xl">
 				CHOCOL<img
@@ -53,7 +53,7 @@
 			</p>
 		</section>
 		<section
-			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-blue p-4 h-screen snap-start"
+			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-blue p-4 h-dvh snap-start"
 		>
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">
 				BLUEB<img
@@ -70,7 +70,7 @@
 		</section>
 	</main>
 	<footer
-		class="flex flex-col justify-end items-start gap-8 md:gap-16 bg-purple p-4 md:p-16 h-screen text-left snap-start"
+		class="flex flex-col justify-end items-start gap-8 md:gap-16 bg-purple p-4 md:p-16 h-dvh text-left snap-start"
 	>
 		<div class="flex flex-col gap-2 md:gap-4">
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">ABOUT</h2>
