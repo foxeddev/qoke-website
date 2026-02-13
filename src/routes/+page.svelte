@@ -75,7 +75,7 @@
 		<div class="flex flex-col gap-2 md:gap-4">
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">ABOUT</h2>
 			<p
-				class="bg-pink max-w-prose text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-105 hover:--skew-1 transition"
+				class="bg-pink max-w-prose text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-105 hover:-skew-1 transition"
 			>
 				I basically just wanted to get that idea out of my head... <br />
 				If you have any idea what product this could be or also want a fancy website like this, check
@@ -86,19 +86,19 @@
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">SOURCES</h2>
 			<ul class="flex flex-col items-start gap-2 md:gap-4">
 				<li
-					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:--skew-1 transition"
+					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
 				>
 					Font for Text:
 					<a href="https://fonts.google.com/specimen/Outfit" class="font-bold">Outfit</a>
 				</li>
 				<li
-					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:--skew-1 transition"
+					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
 				>
 					Font for Headings:
 					<a href="https://fonts.google.com/specimen/Fascinate" class="font-bold">Fascinate</a>
 				</li>
 				<li
-					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:--skew-1 transition"
+					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
 				>
 					Color Palette:
 					<a href="https://coolors.co/palette/9b5de5-f15bb5-fee440-00bbf9-00f5d4" class="font-bold">
