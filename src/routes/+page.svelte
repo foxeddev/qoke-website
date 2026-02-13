@@ -1,3 +1,9 @@
+<script lang="ts">
+	import strawberry from '$lib/assets/strawberry.svg';
+	import chocolate from '$lib/assets/chocolate.svg';
+	import blueberry from '$lib/assets/blueberry.svg';
+</script>
+
 <svelte:head>
 	<title>QOKE</title>
 </svelte:head>
@@ -17,7 +23,13 @@
 		<section
 			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-blue p-4 h-screen snap-start"
 		>
-			<h2 class="font-display text-yellow text-5xl md:text-8xl">STRAWBERRY</h2>
+			<h2 class="font-display text-yellow text-5xl md:text-8xl">
+				STRA<img
+					src={strawberry}
+					alt="Strawberry"
+					class="inline-block -mr-1 md:-mr-2 -mb-1.5 md:-mb-3 -ml-2.5 md:-ml-5 size-12 md:size-24 align-baseline"
+				/>WBERRY
+			</h2>
 			<p
 				class="bg-pink text-yellow text-2xl md:text-3xl -rotate-2 hover:-rotate-1 hover:scale-125 -skew-2 hover:-skew-1 transition"
 			>
@@ -27,7 +39,13 @@
 		<section
 			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-cyan p-4 h-screen snap-start"
 		>
-			<h2 class="font-display text-pink text-5xl md:text-8xl">CHOCOLATE</h2>
+			<h2 class="font-display text-pink text-5xl md:text-8xl">
+				CHOCOL<img
+					src={chocolate}
+					alt="Chocolate"
+					class="inline-block -mr-2 md:-mr-4 -mb-2 md:-mb-4 size-12 md:size-24 align-baseline"
+				/>ATE
+			</h2>
 			<p
 				class="bg-pink text-yellow text-2xl md:text-3xl -rotate-2 hover:-rotate-1 hover:scale-125 -skew-2 hover:-skew-1 transition"
 			>
@@ -37,7 +55,13 @@
 		<section
 			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-blue p-4 h-screen snap-start"
 		>
-			<h2 class="font-display text-yellow text-5xl md:text-8xl">BLUEBERRY</h2>
+			<h2 class="font-display text-yellow text-5xl md:text-8xl">
+				BLUEB<img
+					src={blueberry}
+					alt="Blueberry"
+					class="inline-block -mb-2 md:-mb-4 size-12 md:size-24 align-baseline"
+				/>ERRY
+			</h2>
 			<p
 				class="bg-pink text-yellow text-2xl md:text-3xl -rotate-2 hover:-rotate-1 hover:scale-125 -skew-2 hover:-skew-1 transition"
 			>
