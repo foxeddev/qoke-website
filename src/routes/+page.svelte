@@ -26,7 +26,7 @@
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">
 				STRA<img
 					src={strawberry}
-					alt="Strawberry"
+					alt=""
 					class="inline-block -mr-1 md:-mr-2 -mb-1.5 md:-mb-3 -ml-2.5 md:-ml-5 size-12 md:size-24 align-baseline"
 				/>WBERRY
 			</h2>
@@ -42,7 +42,7 @@
 			<h2 class="font-display text-pink text-5xl md:text-8xl">
 				CHOCOL<img
 					src={chocolate}
-					alt="Chocolate"
+					alt=""
 					class="inline-block -mr-2 md:-mr-4 -mb-2 md:-mb-4 size-12 md:size-24 align-baseline"
 				/>ATE
 			</h2>
@@ -58,7 +58,7 @@
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">
 				BLUEB<img
 					src={blueberry}
-					alt="Blueberry"
+					alt=""
 					class="inline-block -mb-2 md:-mb-4 size-12 md:size-24 align-baseline"
 				/>ERRY
 			</h2>
