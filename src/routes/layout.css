@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-display: 'Fascinate';
+	--font-sans: 'Outfit';
+
+	--color-purple: #9b5de5;
+	--color-pink: #f15bb5;
+	--color-yellow: #fee440;
+	--color-blue: #00bbf9;
+	--color-cyan: #00f5d4;
+}
