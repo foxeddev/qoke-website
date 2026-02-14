@@ -1,4 +1,5 @@
 <script lang="ts">
+	import bottle from '$lib/assets/bottle.svg';
 	import strawberry from '$lib/assets/strawberry.svg';
 	import chocolate from '$lib/assets/chocolate.svg';
 	import blueberry from '$lib/assets/blueberry.svg';
@@ -12,7 +13,13 @@
 	<header
 		class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-purple p-4 h-dvh snap-start"
 	>
-		<h1 class="font-display text-yellow text-8xl md:text-9xl">QOKE</h1>
+		<h1 class="font-display text-yellow text-8xl md:text-9xl">
+			QO<img
+				src={bottle}
+				alt=""
+				class="inline-block -mr-7 md:-mr-10 -mb-1.5 md:-mb-3 -ml-6 md:-ml-9 size-22 md:size-32 align-baseline"
+			/>KE
+		</h1>
 		<p
 			class="bg-pink text-yellow text-2xl md:text-3xl -rotate-2 hover:-rotate-1 hover:scale-125 -skew-2 hover:-skew-1 transition"
 		>
@@ -70,19 +77,19 @@
 		</section>
 	</main>
 	<footer
-		class="flex flex-col justify-end items-start gap-8 md:gap-16 bg-purple p-4 md:p-16 h-dvh text-left snap-start"
+		class="flex flex-col justify-end items-start gap-8 md:gap-16 bg-purple p-4 md:p-16 min-h-dvh text-left snap-start"
 	>
-		<div class="flex flex-col gap-2 md:gap-4">
+		<div class="flex flex-col gap-2 md:gap-4 max-w-prose">
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">ABOUT</h2>
 			<p
-				class="bg-pink max-w-prose text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-105 hover:-skew-1 transition"
+				class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-105 hover:-skew-1 transition"
 			>
 				I basically just wanted to get that idea out of my head... <br />
 				If you have any idea what product this could be or also want a fancy website like this, check
 				out <a href="https://foxeddev.github.io/" class="font-bold">my Portfolio</a>!
 			</p>
 		</div>
-		<div class="flex flex-col gap-2 md:gap-4">
+		<div class="flex flex-col gap-2 md:gap-4 max-w-prose">
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">SOURCES</h2>
 			<ul class="flex flex-col items-start gap-2 md:gap-4">
 				<li
@@ -104,6 +111,25 @@
 					<a href="https://coolors.co/palette/9b5de5-f15bb5-fee440-00bbf9-00f5d4" class="font-bold">
 						Candy Pop
 					</a>
+				</li>
+				<li
+					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+				>
+					Bottle:
+					<a
+						href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=152915"
+						class="font-bold"
+					>
+						OpenClipart-Vectors
+					</a>
+					on
+					<a
+						href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=152915"
+						class="font-bold"
+					>
+						Pixabay
+					</a>
+					(edited)
 				</li>
 				<li
 					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
