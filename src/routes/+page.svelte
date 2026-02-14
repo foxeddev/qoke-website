@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>QOKE</title>
+	<title>Qoke</title>
 </svelte:head>
 
 <div class="h-dvh overflow-scroll text-center snap-mandatory snap-y">
