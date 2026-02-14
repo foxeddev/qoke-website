@@ -1,6 +1,23 @@
 <script lang="ts">
 	import bottle from '$lib/assets/bottle.svg';
 	import flavours from '$lib/data/flavours';
+	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
+
+	let main: HTMLElement;
+	let navigationVisible = false;
+
+	onMount(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					navigationVisible = entry.isIntersecting;
+				});
+			},
+			{ threshold: 0.2 }
+		);
+		observer.observe(main);
+	});
 </script>
 
 <svelte:head>
@@ -27,23 +44,28 @@
 			delicious.cool.refreshing
 		</p>
 	</header>
-	<main>
-		<aside class="top-0 left-0 fixed m-2 md:m-16 text-left">
-			<ul class="flex flex-col items-start gap-1 md:gap-2">
-				<li
-					class="bg-pink font-bold text-yellow text-2xl md:text-3xl uppercase hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
-				>
-					<a href="#top">Qoke</a>
-				</li>
-				{#each flavours as flavour}
+	<main bind:this={main}>
+		{#if navigationVisible}
+			<aside
+				transition:fly={{ x: '-100%', opacity: 1 }}
+				class="top-0 left-0 z-1 fixed pt-2 md:pt-16 pl-2 md:pl-16 text-left"
+			>
+				<ul class="flex flex-col items-start gap-1 md:gap-2">
 					<li
-						class="bg-pink text-yellow text-xl md:text-2xl uppercase hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+						class="bg-pink font-bold text-yellow text-2xl md:text-3xl uppercase hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
 					>
-						<a href={`#${flavour.id}`}>{flavour.name}</a>
+						<a href="#top">Qoke</a>
 					</li>
-				{/each}
-			</ul>
-		</aside>
+					{#each flavours as flavour}
+						<li
+							class="bg-pink text-yellow text-xl md:text-2xl uppercase hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+						>
+							<a href={`#${flavour.id}`}>{flavour.name}</a>
+						</li>
+					{/each}
+				</ul>
+			</aside>
+		{/if}
 		{#each flavours as flavour, index}
 			<section
 				id={flavour.id}
