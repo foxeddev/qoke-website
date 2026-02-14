@@ -17,7 +17,7 @@
 			QO<img
 				src={bottle}
 				alt=""
-				class="inline-block -mr-7 md:-mr-10 -mb-1.5 md:-mb-3 -ml-6 md:-ml-9 size-22 md:size-32 align-baseline"
+				class="inline-block -mr-7 md:-mr-10 -mb-1.5 md:-mb-3 -ml-7 md:-ml-10 size-22 md:size-32 align-baseline"
 			/>KE
 		</h1>
 		<p
