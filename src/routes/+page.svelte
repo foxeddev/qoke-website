@@ -69,7 +69,7 @@
 		{#each flavours as flavour, index}
 			<section
 				id={flavour.id}
-				class={`flex h-dvh snap-start flex-col items-center justify-center gap-2 p-2 md:gap-4 ${index % 2 == 0 ? 'bg-blue' : 'bg-cyan'}`}
+				class={`relative flex h-dvh snap-start flex-col items-center justify-center gap-2 p-2 md:gap-4 ${index % 2 == 0 ? 'bg-blue' : 'bg-cyan'}`}
 			>
 				<h2
 					class={`font-display text-5xl text-nowrap uppercase md:text-8xl ${index % 2 == 0 ? 'text-yellow' : 'text-pink'}`}
@@ -91,6 +91,12 @@
 				>
 					{flavour.tagline}
 				</p>
+				<a
+					href="/"
+					class={`absolute bottom-0 left-0 w-full p-6 font-display text-5xl uppercase ${index % 2 == 0 ? 'bg-yellow text-purple' : 'bg-purple text-yellow'}`}
+				>
+					Add to Cart
+				</a>
 			</section>
 		{/each}
 	</main>
