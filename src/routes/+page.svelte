@@ -88,13 +88,13 @@
 				<li
 					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
 				>
-					Font for Text:
+					Default Font:
 					<a href="https://fonts.google.com/specimen/Outfit" class="font-bold">Outfit</a>
 				</li>
 				<li
 					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
 				>
-					Font for Headings:
+					Heading Font:
 					<a href="https://fonts.google.com/specimen/Fascinate" class="font-bold">Fascinate</a>
 				</li>
 				<li
@@ -104,6 +104,49 @@
 					<a href="https://coolors.co/palette/9b5de5-f15bb5-fee440-00bbf9-00f5d4" class="font-bold">
 						Candy Pop
 					</a>
+				</li>
+				<li
+					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+				>
+					Strawberry:
+					<a
+						href="https://pixabay.com/users/kropekk_pl-114936/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=285782"
+						class="font-bold"
+					>
+						Anna
+					</a>
+					on
+					<a
+						href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=285782"
+						class="font-bold"
+					>
+						Pixabay
+					</a>
+					(edited)
+				</li>
+				<li
+					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+				>
+					Chocolate:
+					<a
+						href="https://pixabay.com/users/bytrangle-6596164/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2896696"
+						class="font-bold"
+					>
+						Trang Le
+					</a>
+					on
+					<a
+						href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2896696"
+						class="font-bold"
+					>
+						Pixabay
+					</a>
+					(edited)
+				</li>
+				<li
+					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+				>
+					Blueberry: Made by myself in <a href="https://www.figma.com/" class="font-bold">Figma</a>
 				</li>
 			</ul>
 		</div>
