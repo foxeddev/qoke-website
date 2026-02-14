@@ -3,14 +3,17 @@
 	import strawberry from '$lib/assets/strawberry.svg';
 	import chocolate from '$lib/assets/chocolate.svg';
 	import blueberry from '$lib/assets/blueberry.svg';
+
+	let currentSection = 0;
 </script>
 
 <svelte:head>
 	<title>Qoke</title>
 </svelte:head>
 
-<div class="h-dvh overflow-scroll text-center snap-mandatory snap-y">
+<div class="h-dvh overflow-scroll text-center scroll-smooth snap-mandatory snap-y">
 	<header
+		id="top"
 		class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-purple p-4 h-dvh snap-start"
 	>
 		<h1 class="font-display text-yellow text-8xl md:text-9xl">
@@ -27,7 +30,32 @@
 		</p>
 	</header>
 	<main>
+		<aside class="top-0 left-0 fixed p-2 md:p-16 h-dvh text-left">
+			<ul class="flex flex-col items-start gap-1 md:gap-2">
+				<li
+					class="bg-pink font-bold text-yellow text-2xl md:text-3xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+				>
+					<a href="#top">QOKE</a>
+				</li>
+				<li
+					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+				>
+					<a href="#strawberry">STRAWBERRY</a>
+				</li>
+				<li
+					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+				>
+					<a href="#chocolate">CHOCOLATE</a>
+				</li>
+				<li
+					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+				>
+					<a href="#blueberry">BLUEBERRY</a>
+				</li>
+			</ul>
+		</aside>
 		<section
+			id="strawberry"
 			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-blue p-4 h-dvh snap-start"
 		>
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">
@@ -44,6 +72,7 @@
 			</p>
 		</section>
 		<section
+			id="chocolate"
 			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-cyan p-4 h-dvh snap-start"
 		>
 			<h2 class="font-display text-pink text-5xl md:text-8xl">
@@ -60,6 +89,7 @@
 			</p>
 		</section>
 		<section
+			id="blueberry"
 			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-blue p-4 h-dvh snap-start"
 		>
 			<h2 class="font-display text-yellow text-5xl md:text-8xl">
