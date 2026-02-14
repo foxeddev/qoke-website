@@ -1,25 +1,25 @@
 <script lang="ts">
 	import bottle from '$lib/assets/bottle.svg';
-	import strawberry from '$lib/assets/strawberry.svg';
-	import chocolate from '$lib/assets/chocolate.svg';
-	import blueberry from '$lib/assets/blueberry.svg';
+	import flavours from '$lib/data/flavours';
 </script>
 
 <svelte:head>
 	<title>Qoke</title>
 </svelte:head>
 
-<div class="h-dvh overflow-scroll text-center scroll-smooth snap-mandatory snap-y">
+<div
+	class="h-dvh overflow-x-hidden overflow-y-scroll text-center scroll-smooth snap-mandatory snap-y"
+>
 	<header
 		id="top"
-		class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-purple p-4 h-dvh snap-start"
+		class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-purple p-2 h-dvh snap-start"
 	>
-		<h1 class="font-display text-yellow text-8xl md:text-9xl">
-			QO<img
+		<h1 class="font-display text-yellow text-8xl md:text-9xl uppercase">
+			Qo<img
 				src={bottle}
 				alt=""
-				class="inline-block -mr-7 md:-mr-10 -mb-1.5 md:-mb-3 -ml-7 md:-ml-10 size-22 md:size-32 align-baseline"
-			/>KE
+				class="inline-block mx-0.5 md:mx-1 -mb-1.5 md:-mb-3 w-auto h-22 md:h-32 align-baseline"
+			/>ke
 		</h1>
 		<p
 			class="bg-pink text-yellow text-2xl md:text-3xl -rotate-2 hover:-rotate-1 hover:scale-125 -skew-2 hover:-skew-1 transition"
@@ -31,84 +31,52 @@
 		<aside class="top-0 left-0 fixed m-2 md:m-16 text-left">
 			<ul class="flex flex-col items-start gap-1 md:gap-2">
 				<li
-					class="bg-pink font-bold text-yellow text-2xl md:text-3xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+					class="bg-pink font-bold text-yellow text-2xl md:text-3xl uppercase hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
 				>
-					<a href="#top">QOKE</a>
+					<a href="#top">Qoke</a>
 				</li>
-				<li
-					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
-				>
-					<a href="#strawberry">STRAWBERRY</a>
-				</li>
-				<li
-					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
-				>
-					<a href="#chocolate">CHOCOLATE</a>
-				</li>
-				<li
-					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
-				>
-					<a href="#blueberry">BLUEBERRY</a>
-				</li>
+				{#each flavours as flavour}
+					<li
+						class="bg-pink text-yellow text-xl md:text-2xl uppercase hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+					>
+						<a href={`#${flavour.id}`}>{flavour.name}</a>
+					</li>
+				{/each}
 			</ul>
 		</aside>
-		<section
-			id="strawberry"
-			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-blue p-4 h-dvh snap-start"
-		>
-			<h2 class="font-display text-yellow text-5xl md:text-8xl">
-				STRA<img
-					src={strawberry}
-					alt=""
-					class="inline-block -mr-1 md:-mr-2 -mb-1.5 md:-mb-3 -ml-2.5 md:-ml-5 size-12 md:size-24 align-baseline"
-				/>WBERRY
-			</h2>
-			<p
-				class="bg-pink text-yellow text-2xl md:text-3xl -rotate-2 hover:-rotate-1 hover:scale-125 -skew-2 hover:-skew-1 transition"
+		{#each flavours as flavour, index}
+			<section
+				id={flavour.id}
+				class={`flex h-dvh snap-start flex-col items-center justify-center gap-2 p-2 md:gap-4 ${index % 2 == 0 ? 'bg-blue' : 'bg-cyan'}`}
 			>
-				ultimate.summer.vibes
-			</p>
-		</section>
-		<section
-			id="chocolate"
-			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-cyan p-4 h-dvh snap-start"
-		>
-			<h2 class="font-display text-pink text-5xl md:text-8xl">
-				CHOCOL<img
-					src={chocolate}
-					alt=""
-					class="inline-block -mr-2 md:-mr-4 -mb-2 md:-mb-4 size-12 md:size-24 align-baseline"
-				/>ATE
-			</h2>
-			<p
-				class="bg-pink text-yellow text-2xl md:text-3xl -rotate-2 hover:-rotate-1 hover:scale-125 -skew-2 hover:-skew-1 transition"
-			>
-				this.one.is.so.cozy
-			</p>
-		</section>
-		<section
-			id="blueberry"
-			class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-blue p-4 h-dvh snap-start"
-		>
-			<h2 class="font-display text-yellow text-5xl md:text-8xl">
-				BLUEB<img
-					src={blueberry}
-					alt=""
-					class="inline-block -mb-2 md:-mb-4 size-12 md:size-24 align-baseline"
-				/>ERRY
-			</h2>
-			<p
-				class="bg-pink text-yellow text-2xl md:text-3xl -rotate-2 hover:-rotate-1 hover:scale-125 -skew-2 hover:-skew-1 transition"
-			>
-				you.should.try.this
-			</p>
-		</section>
+				<h2
+					class={`font-display text-5xl text-nowrap uppercase md:text-8xl ${index % 2 == 0 ? 'text-yellow' : 'text-pink'}`}
+				>
+					{#each flavour.title as titlePart}
+						{#if titlePart.type == 'text'}
+							{titlePart.value}
+						{:else if titlePart.type == 'image'}
+							<img
+								src={titlePart.value}
+								alt=""
+								class="inline-block mx-0.5 md:mx-1 -mb-1.5 md:-mb-3 w-auto h-12 md:h-24 align-baseline"
+							/>
+						{/if}
+					{/each}
+				</h2>
+				<p
+					class="bg-pink text-yellow text-2xl md:text-3xl -rotate-2 hover:-rotate-1 hover:scale-125 -skew-2 hover:-skew-1 transition"
+				>
+					{flavour.tagline}
+				</p>
+			</section>
+		{/each}
 	</main>
 	<footer
-		class="flex flex-col justify-end items-start gap-8 md:gap-16 bg-purple p-4 md:p-16 min-h-dvh text-left snap-start"
+		class="flex flex-col justify-end items-start gap-8 md:gap-16 bg-purple p-2 md:p-16 min-h-dvh text-left snap-start"
 	>
 		<div class="flex flex-col gap-2 md:gap-4 max-w-prose">
-			<h2 class="font-display text-yellow text-5xl md:text-8xl">ABOUT</h2>
+			<h2 class="font-display text-yellow text-5xl md:text-8xl uppercase">About</h2>
 			<p
 				class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-105 hover:-skew-1 transition"
 			>
@@ -118,7 +86,7 @@
 			</p>
 		</div>
 		<div class="flex flex-col gap-2 md:gap-4 max-w-prose">
-			<h2 class="font-display text-yellow text-5xl md:text-8xl">SOURCES</h2>
+			<h2 class="font-display text-yellow text-5xl md:text-8xl uppercase">Sources</h2>
 			<ul class="flex flex-col items-start gap-2 md:gap-4">
 				<li
 					class="bg-pink text-yellow text-xl md:text-2xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
