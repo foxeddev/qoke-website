@@ -3,8 +3,6 @@
 	import strawberry from '$lib/assets/strawberry.svg';
 	import chocolate from '$lib/assets/chocolate.svg';
 	import blueberry from '$lib/assets/blueberry.svg';
-
-	let currentSection = 0;
 </script>
 
 <svelte:head>
@@ -30,7 +28,7 @@
 		</p>
 	</header>
 	<main>
-		<aside class="top-0 left-0 fixed p-2 md:p-16 h-dvh text-left">
+		<aside class="top-0 left-0 fixed m-2 md:m-16 text-left">
 			<ul class="flex flex-col items-start gap-1 md:gap-2">
 				<li
 					class="bg-pink font-bold text-yellow text-2xl md:text-3xl hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
