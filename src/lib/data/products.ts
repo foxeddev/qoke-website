@@ -1,6 +1,7 @@
 import strawberryImage from '$lib/assets/strawberry.svg';
 import chocolateImage from '$lib/assets/chocolate.svg';
 import blueberry from '$lib/assets/blueberry.svg';
+import type { Product } from '$lib/types/product';
 
 export default [
 	{
@@ -33,4 +34,4 @@ export default [
 		],
 		tagline: 'you.should.try.this'
 	}
-];
+] satisfies Product[];

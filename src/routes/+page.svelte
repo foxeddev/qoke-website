@@ -1,13 +1,15 @@
 <script lang="ts">
 	import bottle from '$lib/assets/bottle.svg';
-	import flavours from '$lib/data/flavours';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 
-	let main: HTMLElement;
-	let navigationVisible = false;
+	let { data } = $props();
+	let products = $derived(data.products);
 
-	onMount(() => {
+	let main: HTMLElement;
+	let navigationVisible = $state(false);
+
+	const observeMain = async () => {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
@@ -17,6 +19,10 @@
 			{ threshold: 0.2 }
 		);
 		observer.observe(main);
+	};
+
+	onMount(() => {
+		observeMain();
 	});
 </script>
 
@@ -28,7 +34,7 @@
 	class="h-dvh overflow-x-hidden overflow-y-scroll text-center scroll-smooth snap-mandatory snap-y"
 >
 	<header
-		id="top"
+		id="header"
 		class="flex flex-col justify-center items-center gap-2 md:gap-4 bg-purple p-2 h-dvh snap-start"
 	>
 		<h1 class="font-display text-yellow text-8xl md:text-9xl uppercase">
@@ -44,7 +50,7 @@
 			delicious.cool.refreshing
 		</p>
 	</header>
-	<main bind:this={main}>
+	<main bind:this={main} id="main">
 		{#if navigationVisible}
 			<aside
 				transition:fly={{ x: '-100%', opacity: 1 }}
@@ -54,27 +60,32 @@
 					<li
 						class="bg-pink font-bold text-yellow text-2xl md:text-3xl uppercase hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
 					>
-						<a href="#top">Qoke</a>
+						<a href="#header">Qoke</a>
 					</li>
-					{#each flavours as flavour}
+					{#each products as product}
 						<li
 							class="bg-pink text-yellow text-xl md:text-2xl uppercase hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
 						>
-							<a href={`#${flavour.id}`}>{flavour.name}</a>
+							<a href={`#${product.id}`}>{product.name}</a>
 						</li>
 					{/each}
+					<li
+						class="bg-pink text-yellow text-xl md:text-2xl uppercase hover:-rotate-1 hover:scale-115 hover:-skew-1 transition"
+					>
+						<a href="#footer">Credits</a>
+					</li>
 				</ul>
 			</aside>
 		{/if}
-		{#each flavours as flavour, index}
+		{#each products as product, index}
 			<section
-				id={flavour.id}
+				id={product.id}
 				class={`relative flex h-dvh snap-start flex-col items-center justify-center gap-2 p-2 md:gap-4 ${index % 2 == 0 ? 'bg-blue' : 'bg-cyan'}`}
 			>
 				<h2
 					class={`font-display text-5xl text-nowrap uppercase md:text-8xl ${index % 2 == 0 ? 'text-yellow' : 'text-pink'}`}
 				>
-					{#each flavour.title as titlePart}
+					{#each product.title as titlePart}
 						{#if titlePart.type == 'text'}
 							{titlePart.value}
 						{:else if titlePart.type == 'image'}
@@ -89,18 +100,22 @@
 				<p
 					class="bg-pink text-yellow text-2xl md:text-3xl -rotate-2 hover:-rotate-1 hover:scale-125 -skew-2 hover:-skew-1 transition"
 				>
-					{flavour.tagline}
+					{product.tagline}
 				</p>
-				<a
-					href="/"
-					class={`absolute bottom-0 left-0 w-full p-6 font-display text-5xl uppercase ${index % 2 == 0 ? 'bg-yellow text-purple' : 'bg-purple text-yellow'}`}
-				>
-					Add to Cart
-				</a>
+				<form method="POST" action="/cart/?/add">
+					<input name="productId" type="hidden" value={product.id} />
+					<button
+						type="submit"
+						class={`absolute bottom-0 left-0 w-full cursor-pointer p-6 font-display text-5xl uppercase ${index % 2 == 0 ? 'bg-yellow text-purple hover:bg-purple hover:text-yellow' : 'bg-purple text-yellow hover:bg-yellow hover:text-purple'}`}
+					>
+						Add to Cart
+					</button>
+				</form>
 			</section>
 		{/each}
 	</main>
 	<footer
+		id="footer"
 		class="flex flex-col justify-end items-start gap-8 md:gap-16 bg-purple p-2 md:p-16 min-h-dvh text-left snap-start"
 	>
 		<div class="flex flex-col gap-2 md:gap-4 max-w-prose">
