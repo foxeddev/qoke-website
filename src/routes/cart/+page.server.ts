@@ -13,13 +13,13 @@ export const actions = {
 		const productId = data.get('productId')?.toString();
 		if (!productId) error(404);
 
-		addToCart(cookies, { productId, count: 1 });
+		addToCart(cookies, productId, 1);
 	},
 	remove: async ({ cookies, request }) => {
 		const data = await request.formData();
 		const productId = data.get('productId')?.toString();
 		if (!productId) error(404);
 
-		removeFromCart(cookies, { productId, count: 1 });
+		removeFromCart(cookies, productId, 1);
 	}
 };
