@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
+
 	let { data } = $props();
 	let cartProducts = $derived(data.cartProducts);
 </script>
@@ -31,7 +33,9 @@
 			</svg>
 		</a>
 	</header>
-	<main class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 bg-yellow h-full overflow-x-hidden overflow-y-scroll">
+	<main
+		class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 bg-yellow h-full overflow-x-hidden overflow-y-scroll"
+	>
 		{#each cartProducts as cartProduct, index}
 			{#if cartProduct}
 				<section
@@ -57,7 +61,11 @@
 					>
 						{cartProduct.product.tagline}
 					</p>
-					<form method="POST" class="bottom-0 left-0 absolute flex bg-purple w-full text-yellow">
+					<form
+						method="POST"
+						use:enhance
+						class="bottom-0 left-0 absolute flex bg-purple w-full text-yellow"
+					>
 						<input name="productId" type="hidden" value={cartProduct.product.id} />
 						<button
 							type="submit"

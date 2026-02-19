@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import bottle from '$lib/assets/bottle.svg';
+	import { redirect } from '@sveltejs/kit';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 
@@ -102,7 +104,7 @@
 				>
 					{product.tagline}
 				</p>
-				<form method="POST" action="/cart/?/add">
+				<form method="POST" use:enhance={redirect(303, 'cart')} action="/cart/?/add">
 					<input name="productId" type="hidden" value={product.id} />
 					<button
 						type="submit"
