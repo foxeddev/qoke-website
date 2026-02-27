@@ -1,5 +1,5 @@
 import { addToCart, getCartProducts, removeFromCart } from '$lib/cart.js';
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 
 export const load = async ({ cookies }) => {
 	return {
@@ -18,6 +18,8 @@ export const actions = {
 
 		addToCart(cookies, productId, 1);
 
+		redirect(303, '/cart');
+
 		return { success: true };
 	},
 	remove: async ({ cookies, request }) => {
@@ -29,6 +31,8 @@ export const actions = {
 		}
 
 		removeFromCart(cookies, productId, 1);
+
+		redirect(303, '/cart');
 
 		return { success: true };
 	}

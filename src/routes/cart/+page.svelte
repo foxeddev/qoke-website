@@ -69,7 +69,7 @@
 						<input name="productId" type="hidden" value={cartProduct.product.id} />
 						<button
 							type="submit"
-							formaction="/cart/?/remove"
+							formaction="?/remove"
 							title="Remove one product"
 							class="left-0 absolute flex justify-center items-center hover:bg-yellow h-full aspect-square font-display hover:text-purple text-5xl uppercase cursor-pointer"
 						>
@@ -91,7 +91,7 @@
 						</p>
 						<button
 							type="submit"
-							formaction="/cart/?/add"
+							formaction="?/add"
 							title="Add one product"
 							class="right-0 absolute flex justify-center items-center hover:bg-yellow h-full aspect-square font-display hover:text-purple text-5xl uppercase cursor-pointer"
 						>
