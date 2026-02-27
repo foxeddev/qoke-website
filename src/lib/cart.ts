@@ -13,7 +13,7 @@ export const addToCart = (cookies: Cookies, productId: string, count: number) =>
 		} else if (cartItems[itemIndex].count >= 8) {
 			cartItems[itemIndex].count = 8;
 		}
-	} else {
+	} else if (count > 0) {
 		cartItems.push({ productId, count });
 	}
 	cookies.set('cart', JSON.stringify(cartItems), { path: '/' });
