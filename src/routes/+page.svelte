@@ -3,9 +3,17 @@
 	import bottle from '$lib/assets/bottle.svg';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
+	import type { Snapshot } from './$types';
 
 	let { data } = $props();
 	let products = $derived(data.products);
+
+	let wrapper: HTMLDivElement | undefined = $state();
+
+	export const snapshot: Snapshot<number> = {
+		capture: () => (wrapper ? wrapper.scrollTop : 0),
+		restore: (value) => wrapper?.scrollTo({ top: value, behavior: 'instant' })
+	};
 
 	let main: HTMLElement;
 	let navigationVisible = $state(false);
@@ -32,7 +40,9 @@
 </svelte:head>
 
 <div
+	id="wrapper"
 	class="h-dvh overflow-x-hidden overflow-y-scroll text-center scroll-smooth snap-mandatory snap-y"
+	bind:this={wrapper}
 >
 	<header
 		id="header"

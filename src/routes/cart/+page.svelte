@@ -14,10 +14,10 @@
 		class="relative flex justify-center items-center gap-2 md:gap-4 bg-purple p-2 text-yellow"
 	>
 		<h1 class="p-6 font-display text-5xl uppercase">Cart</h1>
-		<a
-			href="/#main"
+		<button
 			title="Close"
-			class="right-0 absolute flex justify-center items-center hover:bg-yellow h-full aspect-square hover:text-purple"
+			onclick={() => history.back()}
+			class="right-0 absolute flex justify-center items-center hover:bg-yellow h-full aspect-square hover:text-purple cursor-pointer"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@
 					d="M1202 1066q0 40-28 68l-136 136q-28 28-68 28t-68-28L608 976l-294 294q-28 28-68 28t-68-28L42 1134q-28-28-28-68t28-68l294-294L42 410q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294l294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68L880 704l294 294q28 28 28 68"
 				/>
 			</svg>
-		</a>
+		</button>
 	</header>
 	<main
 		class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 bg-yellow h-full overflow-x-hidden overflow-y-scroll"
