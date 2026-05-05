@@ -126,7 +126,7 @@
 			>
 				I basically just wanted to get that idea out of my head... <br />
 				If you have any idea what product this could be or also want a fancy website like this, check
-				out <a href="https://foxeddev.github.io/" class="font-bold">my Portfolio</a>!
+				out <a href="https://foxeddev.vercel.app/" class="font-bold">my portfolio</a>!
 			</p>
 		</div>
 		<div class="flex flex-col gap-2 md:gap-4 max-w-prose">
